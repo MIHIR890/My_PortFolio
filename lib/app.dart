@@ -12,9 +12,8 @@ import 'core/theme/theme.dart';
 import 'modules/home/home_view.dart';
 import 'dart:html' as html;
 
-
 class PortfolioApp extends StatelessWidget {
-   PortfolioApp({super.key});
+  PortfolioApp({super.key});
 
   // @override
   // Widget build(BuildContext context) {
@@ -26,14 +25,14 @@ class PortfolioApp extends StatelessWidget {
   //     routes: {
   //       '/portfolio': (context) => const HomeView(),
   //       '/portfolio/about': (context) => const AboutView(),
-        
+
   //     },
   //   );
   // }
-    @override
+  @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color(0xFFF7F8FA),
+      color: Color.fromARGB(255, 13, 25, 48),
       child: Padding(
         padding: EdgeInsets.symmetric(
             horizontal: (ScreenUtil.getInstance().setWidth(108))), //144
@@ -50,14 +49,13 @@ class PortfolioApp extends StatelessWidget {
   }
 
   //AppBar Methods:-------------------------------------------------------------
-  AppBar  _buildAppBar(BuildContext context) {
+  AppBar _buildAppBar(BuildContext context) {
     return AppBar(
       titleSpacing: 0.0,
       title: _buildTitle(),
       backgroundColor: Colors.transparent,
       elevation: 0.0,
-      actions:
-         _buildActions(),
+      actions: _buildActions(),
     );
   }
 
@@ -187,8 +185,8 @@ class PortfolioApp extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Expanded(flex: 1, child: _buildContent(context)),
-          Divider(),  
-          _buildCopyRightText(context),
+          Divider(),
+          // _buildCopyRightText(context),
           SizedBox(
               height: ResponsiveWidget.isSmallScreen(context) ? 12.0 : 0.0),
           _buildSocialIcons(),
@@ -205,9 +203,10 @@ class PortfolioApp extends StatelessWidget {
     //   Assets.programmer3,
     //   height: ScreenUtil.getInstance().setWidth(345), //480.0
     // );
-        return Lottie.asset('assets/lottie/app_start.json',
-                 width: ScreenUtil.getInstance().setWidth(345), //480.0
-);
+    return Lottie.asset(
+      'assets/lottie/portfolio_start.json',
+      width: ScreenUtil.getInstance().setWidth(345), //480.0
+    );
   }
 
   Widget _buildContent(BuildContext context) {
@@ -273,6 +272,7 @@ class PortfolioApp extends StatelessWidget {
           ? Strings.headline
           : Strings.headline.replaceFirst(RegExp(r' f'), '\nf'),
       style: TextStyles.sub_heading,
+  
     );
   }
 
@@ -305,18 +305,15 @@ class PortfolioApp extends StatelessWidget {
 
   // Skills Methods:------------------------------------------------------------
   final skills = [
-    'Java',
-    'Kotlin',
     'Dart',
     'Flutter',
+    'Java',
     'Android',
     'iOS',
-    'Xamarin',
-    'Reactive Programming',
-    'Jenkins',
-    'Photoshop',
-    'JFrog Atrtifactory',
-    'Code Magic',
+    'MongoDB',
+    'NODE JS',
+    'Express',
+    
   ];
 
   Widget _buildSkills(BuildContext context) {
@@ -347,6 +344,7 @@ class PortfolioApp extends StatelessWidget {
 
   Widget _buildSkillChip(BuildContext context, String label) {
     return Chip(
+      backgroundColor: Color.fromARGB(255, 155, 168, 216),
       label: Text(
         label,
         style: TextStyles.chip.copyWith(
@@ -359,22 +357,16 @@ class PortfolioApp extends StatelessWidget {
   // Education Methods:---------------------------------------------------------
   final educationList = [
     Education(
-      'Apr 2018',
+      'May 2024',
       'Present',
-      'Embrace-it Pakistan',
-      'Sr. Software Engineer',
-    ),
-    Education(
-      'Apr 2016',
-      'Apr 2018',
-      'TEO International',
-      'Sr. Software Engineer',
-    ),
-    Education(
-      'July 2014',
-      'March 2016',
-      'Citrusbits',
+      'Grin Technologies Nagpur',
       'Software Engineer',
+    ),
+    Education(
+      'August 2023',
+      'May 2024',
+      'HB GADGETS TECHNOLOGY SOLUTIONS PVT LTD, Nagpur',
+      'Flutter Developer',
     ),
   ];
 
@@ -383,7 +375,7 @@ class PortfolioApp extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         _buildEducationContainerHeading(),
-        _buildEducationSummary(),
+        // _buildEducationSummary(),
         SizedBox(height: 8.0),
         _buildEducationTimeline(),
       ],
@@ -424,7 +416,6 @@ class PortfolioApp extends StatelessWidget {
           Text(
             '${education.organization}',
             style: TextStyles.body.copyWith(
-              color: Color(0xFF45405B),
             ),
           ),
           Text(
@@ -447,10 +438,10 @@ class PortfolioApp extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Align(
-                child: _buildCopyRightText(context),
-                alignment: Alignment.centerLeft,
-              ),
+              // Align(
+              //   child: _buildCopyRightText(context),
+              //   alignment: Alignment.centerLeft,
+              // ),
               Align(
                 child: _buildSocialIcons(),
                 alignment: Alignment.centerRight,
@@ -462,14 +453,14 @@ class PortfolioApp extends StatelessWidget {
     );
   }
 
-  Widget _buildCopyRightText(BuildContext context) {
-    return Text(
-      Strings.rights_reserved,
-      style: TextStyles.body1.copyWith(
-        fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
-      ),
-    );
-  }
+  // Widget _buildCopyRightText(BuildContext context) {
+  //   return Text(
+  //     Strings.rights_reserved,
+  //     style: TextStyles.body1.copyWith(
+  //       fontSize: ResponsiveWidget.isSmallScreen(context) ? 8 : 10.0,
+  //     ),
+  //   );
+  // }
 
   Widget _buildSocialIcons() {
     return Row(
@@ -478,54 +469,54 @@ class PortfolioApp extends StatelessWidget {
       children: <Widget>[
         GestureDetector(
           onTap: () {
-            html.window
-                .open("https://www.linkedin.com/in/zubairehman/", "LinkedIn");
+            html.window.open(
+                "https://www.linkedin.com/in/mihir-pandit-44609b214",
+                "LinkedIn");
           },
           child: Image.network(
             Assets.linkedin,
-            color: Color(0xFF45405B),
+            color: Color.fromARGB(255, 228, 228, 230),
             height: 20.0,
             width: 20.0,
           ),
         ),
+        // SizedBox(width: 16.0),
+        // GestureDetector(
+        //   onTap: () {
+        //     html.window.open("https://medium.com/@zubairehman.work", "Medium");
+        //   },
+        //   child: Image.network(
+        //     Assets.evernote,
+        //     color: Color(0xFF45405B),
+        //     height: 20.0,
+        //     width: 20.0,
+        //   ),
+        // ),
         SizedBox(width: 16.0),
         GestureDetector(
           onTap: () {
-            html.window.open("https://medium.com/@zubairehman.work", "Medium");
-          },
-          child: Image.network(
-            Assets.evernote,
-            color: Color(0xFF45405B),
-            height: 20.0,
-            width: 20.0,
-          ),
-        ),
-        SizedBox(width: 16.0),
-        GestureDetector(
-          onTap: () {
-            html.window.open("https://github.com/zubairehman", "Github");
+            html.window.open("https://github.com/MIHIR890", "Github");
           },
           child: Image.network(
             Assets.google,
-            color: Color(0xFF45405B),
+            color: Color.fromARGB(255, 228, 228, 230),
             height: 20.0,
             width: 20.0,
           ),
         ),
-        SizedBox(width: 16.0),
-        GestureDetector(
-          onTap: () {
-            html.window.open("https://twitter.com/zubair340", "Twitter");
-          },
-          child: Image.network(
-            Assets.twitter,
-            color: Color(0xFF45405B),
-            height: 20.0,
-            width: 20.0,
-          ),
-        ),
+        // SizedBox(width: 16.0),
+        // GestureDetector(
+        //   onTap: () {
+        //     html.window.open("https://twitter.com/zubair340", "Twitter");
+        //   },
+        //   child: Image.network(
+        //     Assets.twitter,
+        //     color: Color(0xFF45405B),
+        //     height: 20.0,
+        //     width: 20.0,
+        //   ),
+        // ),
       ],
     );
   }
 }
-

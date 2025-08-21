@@ -7,10 +7,10 @@ class Strings {
   static const String portfoli = 'Portfoli';
   static const String o = 'o';
   static const String headline = 'I\'am MIhir Pandit, Mobile App Developer';
-  static const String summary = 'Focused professional having excellent technical and communication skills, and offering 6 years of experience in Computer industry. Proficient at designing and formulating test automation frameworks, writing code in various languages, feature development and implementation. Specialize in thinking outside the box to find unique solutions to difficult engineering problems.';
+  static const String summary = ' An IT professional with 2 years of experience in building high-performance mobile applications for both Android and iOS platforms, specializing as a skilled Flutter Developer. Proficient in Flutter and Dart, with a focus on creating responsive user interfaces, integrating APIs, and managing app state using tools like GetX and Provider. Committed to delivering high-quality mobile apps with smooth performance, efficient code, and exceptional user experiences.';
   static const String experience = 'Experience';
   static const String skills_i_have = 'What Skill I Have';
-  static const String rights_reserved = '© 2019 IOTECK SOLUTIONS. ALL RIGHTS RESERVED.';
+  // static const String rights_reserved = '© 2019 IOTECK SOLUTIONS. ALL RIGHTS RESERVED.';
 
   // menu items
   static const String menu_home = 'Home';
